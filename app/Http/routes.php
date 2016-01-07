@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/picture',"PicController@output");
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
