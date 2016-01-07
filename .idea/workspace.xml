@@ -2,24 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd829357-dd41-4609-b830-99b1b8f11c41" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/a.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452150643.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452150725.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452151426.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452152502.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452152578.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452152654.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452152678.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452152813.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452152906.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452152929.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/afterCrop1452152969.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/PicController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Libs/ImageCrop.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/pic/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452150643.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452150725.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452151426.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452152502.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452152578.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452152654.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452152678.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452152813.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452152906.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452152929.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pic/afterCrop1452152969.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PicController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PicController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Libs/ImageCrop.php" afterPath="$PROJECT_DIR$/app/Libs/ImageCrop.php" />
     </list>
     <ignored path="TouchCapthcaBackend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,31 +42,51 @@
       <file leaf-file-name="ImageCrop.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Libs/ImageCrop.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.769231">
-              <caret line="252" column="26" selection-start-line="252" selection-start-column="8" selection-end-line="252" selection-end-column="26" />
+            <state vertical-scroll-proportion="-6.5">
+              <caret line="264" column="46" selection-start-line="264" selection-start-column="46" selection-end-line="264" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/pic/.gitignore">
+      <file leaf-file-name="ImageCom.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Libs/ImageCom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.06872852">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state vertical-scroll-proportion="-30.625">
+              <caret line="54" column="24" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PicController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gd.php" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/gd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.958333">
+              <caret line="453" column="41" selection-start-line="453" selection-start-column="34" selection-end-line="453" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PicController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PicController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.125">
-              <caret line="49" column="28" selection-start-line="45" selection-start-column="12" selection-end-line="49" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.10703364">
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.25">
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,11 +103,12 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/README_CN.md" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Libs/cop.php" />
-        <option value="$PROJECT_DIR$/app/Libs/ImageCrop.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PicController.php" />
         <option value="$PROJECT_DIR$/public/pic/.gitignore" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Libs/ImageCrop.php" />
+        <option value="$PROJECT_DIR$/app/Libs/ImageCom.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PicController.php" />
       </list>
     </option>
   </component>
@@ -176,24 +195,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TouchCapthcaBackend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TouchCapthcaBackend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -231,6 +232,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TouchCapthcaBackend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TouchCapthcaBackend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Middleware" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,37 +460,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/pic/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06872852">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libs/ImageCrop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5">
+          <caret line="264" column="46" selection-start-line="264" selection-start-column="46" selection-end-line="264" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/gd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.958333">
+          <caret line="453" column="41" selection-start-line="453" selection-start-column="34" selection-end-line="453" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libs/ImageCom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-30.625">
+          <caret line="54" column="24" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PicController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.125">
-          <caret line="49" column="28" selection-start-line="45" selection-start-column="12" selection-end-line="49" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.10703364">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/ImageCrop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.769231">
-          <caret line="252" column="26" selection-start-line="252" selection-start-column="8" selection-end-line="252" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pic/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06872852">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

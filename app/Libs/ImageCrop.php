@@ -238,11 +238,6 @@ class ImageCrop{
         imagefill($this->dImage, 0, 0, $bg);     //给图像用颜色进行填充
         imagecolortransparent($this->dImage, $bg);  //背景定义成透明色
 
-        $ratio_w = 1.0 * $dst_width / $this->src_width;  //横向缩放的比例
-        $ratio_h = 1.0 * $dst_height / $this->src_height;  //纵向缩放的比例
-
-        var_dump($this);
-
 
         //不进行缩放,直接对图像进行裁剪
         $ratio = 1.0;
@@ -254,5 +249,39 @@ class ImageCrop{
         imagedestroy($tmp_img);
 
     }
+
+    /**
+     * 图片重叠
+     *
+     * @param $waterImg 水印图片
+     * @param $postion_x 横坐标
+     * @param $postion_y  纵坐标
+     * @param int $alpha  透明度
+     * @return int
+     */
+    function img_water_mark($waterImg, $postion_x,$postion_y, $alpha=50)
+    {
+        //读取水印文件
+        $waterinfo = @getimagesize($waterImg);
+
+        $waterImgObj = $this->image_create_from_ext($waterImg);
+
+        imagecopymerge($this->dImage, $waterImgObj, $postion_x, $postion_y, 0, 0, $waterinfo[0], $waterinfo[1], $alpha);
+        imagedestroy($waterImgObj);
+    }
+
+    function image_create_from_ext($imgfile)
+    {
+        $info = getimagesize($imgfile);
+        $im = null;
+        switch ($info[2]) {
+            case 1: $im=imagecreatefromgif($imgfile); break;
+            case 2: $im=imagecreatefromjpeg($imgfile); break;
+            case 3: $im=imagecreatefrompng($imgfile); break;
+        }
+        return $im;
+    }
+
+
 }
 ?>

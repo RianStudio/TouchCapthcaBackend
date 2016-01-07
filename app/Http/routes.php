@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/picture',"PicController@output");
 
-
+Route::get('/xy',"PicController@xy");
 /*
 |--------------------------------------------------------------------------
 | Application Routes
