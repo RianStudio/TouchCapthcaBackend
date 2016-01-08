@@ -20,16 +20,21 @@ class PicController extends Controller
      * @param Request $request
      */
     function output(Request $request){
-        //模拟接收kv
 
+
+
+        //需要定时删除对应的文件
+        //每10s进行一次刷新
+
+        //模拟接收kv
 
         $url='http://tback.localhost:8080/';
         //模拟根据返回相关图片
 
-        $s= $request->get('s');
+
 
         //根据参数状态返回对于的图片
-        $pathToFile="./pic/a.jpg";
+        $pathToFile="./asset/pics/".rand(1,8).".jpg";
 
 
       //随机产生位置
@@ -49,8 +54,8 @@ class PicController extends Controller
         $save_path="./pic";
         $noic_file='wa'.time().'.jpg';
         $notice=new ImageCom();
-        $water_icon='./water.jpg';
-       $w_path= $notice->img_water_mark($pathToFile,$water_icon,$save_path,$noic_file,6,100,$rand_x,$rand_y);
+        $water_icon='./asset/pics/water.jpg';
+        $wa= $notice->img_water_mark($pathToFile,$water_icon,$save_path,$noic_file,6,100,$rand_x,$rand_y);
 
 
         //一次请求.返回全部的数据
@@ -58,44 +63,17 @@ class PicController extends Controller
         $result=[
             'r'=>$url.$pathToFile,
             'w'=>$url.$crop_img,
-            'a'=>$url.$w_path,
+            'a'=>$url.$wa,
             'x'=>$rand_x,
             'y'=>$rand_y,
         ];
-
         header('Access-Control-Allow-Origin:*');
 
         return response()->json($result);
-//        if($s == 1){
-//
-//            //模拟输出完整图片
-//            return response()->download($pathToFile);
-//
-//        }
-//
-//        if($s == 2){
-//
-//            return response()->download($crop_img);
-//
-//            //模拟输出裁剪之后的图片
-//        }
-//        if($s == 3){
-//
-//            return response()->download($w_path);
-//        }
-//
-//        if($s == 4){
-//
-//            //允许跨域调用
-//            header('Access-Control-Allow-Origin:*');
-//
-//
-//
-//            //返回产生的坐标
-//
-//            return response()->json(['x'=>$rand_x,'y'=>$rand_y]);
-//        }
     }
+
+
+
 
 
     /**
