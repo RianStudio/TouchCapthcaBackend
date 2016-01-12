@@ -15,9 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Route::get('/picture',"PicController@output");
 
-Route::get('/xy',"PicController@xy");
+
+//用户登录地址
+Route::get('/login/index',"LoginController@index");
+Route::post('/login/index',"LoginController@index");
+
+//后台首页
+Route::get('/backend/index',"IndexController@index");
 /*
 |--------------------------------------------------------------------------
 | Application Routes

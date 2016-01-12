@@ -31,8 +31,6 @@ class PicController extends Controller
         $url='http://tback.localhost:8080/';
         //模拟根据返回相关图片
 
-
-
         //根据参数状态返回对于的图片
         $pathToFile="./asset/pics/".rand(1,8).".jpg";
 
@@ -73,37 +71,5 @@ class PicController extends Controller
     }
 
 
-
-
-
-    /**
-     * 返回当前用户的当前请求的图片校验坐标
-     * @param Request $request
-     */
-    public function xy(Request $request){
-
-        //允许跨域调用
-        header('Access-Control-Allow-Origin:*');
-        $x=120;
-        $y=130;
-
-
-        //返回产生的坐标
-
-        return response()->json(['x'=>$x,'y'=>$y]);
-    }
-
-
-
-
-    /**
-     * 获取一个图片
-     */
-    private function _getOnePic(){
-
-        $pics=[];
-        $pics[]="";
-
-    }
 
 }
