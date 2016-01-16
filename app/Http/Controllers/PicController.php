@@ -23,11 +23,7 @@ class PicController extends Controller
      * @param Request $request
      */
     function output(Request $request){
-
-
-
         //对传递过来的key 和密码进行检验
-
         $un_key=$request->get("k");
         $un_s=$request->get("s");
 
@@ -38,15 +34,18 @@ class PicController extends Controller
         //*模拟创建app
 //        $kv=Passport::addAppPassport($user_id);
         //对传递过来的数据进行验证
-
         $find=Passport::checkPassport($un_key,$un_s);
-
         //错误处理,如果是错误的账户密码,返回什么情况
 
+        if($find === false){
+            //返回错误的json
+            $fail_json=[
+                'type'=>0,
 
-
-        //需要定时删除对应的文件
-        //每10s进行一次刷新
+            ];
+            header('Access-Control-Allow-Origin:*');
+            return response()->json($fail_json);
+        }
 
         //随机生成本地cooike保存的字符串进行匹配
         $cookie_str=md5(substr( md5(microtime()),2,10));
@@ -70,7 +69,6 @@ class PicController extends Controller
         $ic=new ImageCrop($pathToFile,$crop_img);
         $ic->Cut(40,30,$rand_x,$rand_y);
         $ic->SaveImage();
-        //$ic->SaveAlpha();将补白变成透明像素保存
         $ic->destory();
 
         //合成可以提示用户的水印
@@ -83,24 +81,20 @@ class PicController extends Controller
 
 
         //一次请求.返回全部的数据
-
         $result=[
+            'type'=>1,
             'r'=>$url.$pathToFile,
             'w'=>$url.$crop_img,
             'a'=>$url.$wa,
             'x'=>$rand_x,
             'y'=>$rand_y,
             'c'=>$cookie_str,
-            'tk'=>$un_key,
-            'ts'=>$un_s,
-
-
         ];
 
         //
 
         //添加记录
-        Record::AddRecord("","","",$pathToFile,$crop_img,$wa,$rand_x,$rand_y,$cookie_str);
+        Record::AddRecord("","",$find,$pathToFile,$crop_img,$wa,$rand_x,$rand_y,$cookie_str);
 
         //能进行跨域调用
         header('Access-Control-Allow-Origin:*');
@@ -109,12 +103,9 @@ class PicController extends Controller
     }
 
 
-    /**
-     * 通过ajax获取配置文件
-     */
-    public static function getKV(){
+    //后端进行校验
 
-    }
+
 
 
 
