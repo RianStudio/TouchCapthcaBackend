@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Libs\ImageCrop;
 use App\Libs\ImageCom;
 use App\Record;
+use App\User;
+use App\Passport;
 
 class PicController extends Controller
 {
@@ -21,6 +23,26 @@ class PicController extends Controller
      * @param Request $request
      */
     function output(Request $request){
+
+
+
+        //对传递过来的key 和密码进行检验
+
+        $un_key=$request->get("k");
+        $un_s=$request->get("s");
+
+        //进行检测,检查是不是正确
+        //kv生成流程,创建用户,创建kv,一个用户可以对应多个app,每个app有对应的kv
+        //*模拟创建用户
+//        $user_id=User::addUser("coder".rand(10,99),"233".rand(100,999)."@qq.com","123456");
+        //*模拟创建app
+//        $kv=Passport::addAppPassport($user_id);
+        //对传递过来的数据进行验证
+
+        $find=Passport::checkPassport($un_key,$un_s);
+
+        //错误处理,如果是错误的账户密码,返回什么情况
+
 
 
         //需要定时删除对应的文件
@@ -69,6 +91,9 @@ class PicController extends Controller
             'x'=>$rand_x,
             'y'=>$rand_y,
             'c'=>$cookie_str,
+            'tk'=>$un_key,
+            'ts'=>$un_s,
+
 
         ];
 
@@ -81,6 +106,14 @@ class PicController extends Controller
         header('Access-Control-Allow-Origin:*');
 
         return response()->json($result);
+    }
+
+
+    /**
+     * 通过ajax获取配置文件
+     */
+    public static function getKV(){
+
     }
 
 
