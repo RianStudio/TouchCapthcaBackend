@@ -102,8 +102,14 @@ class PicController extends Controller
         return response()->json($result);
     }
 
+    /**
+     * 校验数据
+     */
+    public function v(){
+        return "vvv";
 
-    //后端进行校验
+
+    }
 
 
 
