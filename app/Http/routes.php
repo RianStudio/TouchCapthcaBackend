@@ -20,7 +20,7 @@ Route::get('/', function () {
 //获取数据
 Route::get('/picture',"PicController@output");
 //检查验证
-Route::get('/v',"PicController@v");
+Route::any('/v',"PicController@v");
 
 
 

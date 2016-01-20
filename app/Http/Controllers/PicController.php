@@ -91,8 +91,6 @@ class PicController extends Controller
             'c'=>$cookie_str,
         ];
 
-        //
-
         //添加记录
         Record::AddRecord("","",$find,$pathToFile,$crop_img,$wa,$rand_x,$rand_y,$cookie_str);
 
@@ -105,8 +103,31 @@ class PicController extends Controller
     /**
      * 校验数据
      */
-    public function v(){
-        return "vvv";
+    public function v(Request $request){
+
+
+        $all=$request->all();
+
+        $k=base64_decode($request->get("k"));
+
+        $v=base64_decode($request->get("v"));
+
+        $location=$request->get("location");
+
+        //进行kv数据检查
+
+        $find=Passport::checkPassport($k,$v);
+
+        if($find === false){
+            return 0;
+        }
+
+        //对cookie的id进行检查,确认是哪个数据
+
+
+
+        var_dump($request->all());
+
 
 
     }
