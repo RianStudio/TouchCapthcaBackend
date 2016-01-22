@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Record extends Model
 {
@@ -27,10 +28,26 @@ class Record extends Model
         return $model->id;
     }
 
+
     /**
-     * 删除记录
+     * 修改记录,变成标记状态
+     * @param $cooike
      */
-    public static function DelRecord($id){
-        return DB::table('records')->where('id', $id)->delete();
+    public static function mark($cooike){
+        DB::table('records')
+            ->where('cookie_str', $cooike)
+            ->update(['void_verify' => time()]);
+    }
+
+
+    /**
+     * 获取这次的全部信息
+     * @param $k
+     * @param $v
+     * @param $cookie
+     */
+    public static function getInfoByCooike($cookie){
+        $info= DB::table('records')->where('cookie_str',$cookie)->get();
+        return $info[0];
     }
 }

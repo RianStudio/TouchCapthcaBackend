@@ -26,7 +26,6 @@ class PicController extends Controller
         //对传递过来的key 和密码进行检验
         $un_key=$request->get("k");
         $un_s=$request->get("s");
-
         //进行检测,检查是不是正确
         //kv生成流程,创建用户,创建kv,一个用户可以对应多个app,每个app有对应的kv
         //*模拟创建用户
@@ -61,11 +60,8 @@ class PicController extends Controller
         //随机产生被裁剪的横坐标和纵坐标
         $rand_x=rand(10,200);
         $rand_y=rand(10,150);
-
-
         //根据时间随机生成按钮路径
         $crop_img='./pic/afterCrop'.time().'.jpg';
-
         $ic=new ImageCrop($pathToFile,$crop_img);
         $ic->Cut(40,30,$rand_x,$rand_y);
         $ic->SaveImage();
@@ -78,8 +74,6 @@ class PicController extends Controller
         $water_icon='./asset/pics/water.jpg';
         //背景路径
         $wa= $notice->img_water_mark($pathToFile,$water_icon,$save_path,$noic_file,6,100,$rand_x,$rand_y);
-
-
         //一次请求.返回全部的数据
         $result=[
             'type'=>1,
@@ -90,18 +84,15 @@ class PicController extends Controller
             'y'=>$rand_y,
             'c'=>$cookie_str,
         ];
-
         //添加记录
-        Record::AddRecord("","",$find,$pathToFile,$crop_img,$wa,$rand_x,$rand_y,$cookie_str);
-
+        Record::AddRecord(time(),0,$find,$pathToFile,$crop_img,$wa,$rand_x,$rand_y,$cookie_str);
         //能进行跨域调用
         header('Access-Control-Allow-Origin:*');
-
         return response()->json($result);
     }
 
     /**
-     * 校验数据
+     * 校验数据,返回验证结果
      */
     public function v(Request $request){
 
@@ -114,6 +105,8 @@ class PicController extends Controller
 
         $location=$request->get("location");
 
+        $cookie=$request->get("c");
+
         //进行kv数据检查
 
         $find=Passport::checkPassport($k,$v);
@@ -124,16 +117,37 @@ class PicController extends Controller
 
         //对cookie的id进行检查,确认是哪个数据
 
+        $info=Record::getInfoByCooike($cookie);
+
+        if(!$info){
+            return 0;
+        }
+
+        //解析传递过来的位置坐标
+
+        $decode_localtion=base64_decode($location);
+
+        $location_arr=explode("cute",$decode_localtion);
+
+        $lo_x=base64_decode($location_arr[0]);
+        $lo_y=base64_decode($location_arr[1]);
+
+        //和原来的数据进行对比
+
+        if(abs($lo_x - $info->point_x) < 10 &&  abs($lo_y - $info->point_y)  < 10 ){
+            //验证成功
+            $result=1;
+            //标记成功
+            Record::mark($cookie);
+            //删除文件
+            @unlink($info->pic_background);
+            @unlink($info->pic_button);
+        }else{
+            //验证失败
+            $result=0;
 
 
-        var_dump($request->all());
-
-
-
+        }
+        echo $result;
     }
-
-
-
-
-
 }
