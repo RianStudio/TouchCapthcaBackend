@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 
@@ -32,6 +30,9 @@ Route::post('/login/index',"LoginController@index");
 Route::get('/backend/index',"IndexController@index");
 //密钥管理
 Route::get('/backend/key',"IndexController@key");
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -44,5 +45,15 @@ Route::get('/backend/key',"IndexController@key");
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get('/backend/key',"IndexController@key");
     //
+// Authentication routes...
+    Route::get('auth/login', 'Auth\AuthController@getLogin');
+    Route::post('auth/login', 'Auth\AuthController@postLogin');
+    Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+    Route::get('auth/register', 'Auth\AuthController@getRegister');
+    Route::post('auth/register', 'Auth\AuthController@postRegister');
+
 });

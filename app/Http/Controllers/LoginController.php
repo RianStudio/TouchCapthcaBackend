@@ -1,5 +1,12 @@
 <?php
 
+/**
+ *
+ *
+ * 重写框架自带的auth部分,写到系统中
+ *
+ *
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

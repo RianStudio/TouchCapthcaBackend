@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Passport;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -23,7 +23,8 @@ class IndexController extends Controller
     /**
      * 展示现在的kv
      */
-    public function key(){
+    public function key(Request $request){
+
         $func=__FUNCTION__;
 
         //获取当前的密钥

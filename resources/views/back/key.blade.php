@@ -145,8 +145,6 @@
 
     });
 
-
-
         //确定更新密钥吗?确定,更新密钥,刷新界面
         $('#reset').click(function(){
             bootbox.confirm("你确定要重置密钥吗?重置后需要修改网页端配置文件!", function(result) {
@@ -154,7 +152,7 @@
                 if(result === true){
                     alert("ok");
                     //调用ajax
-                    
+
                 }
             });
         });
