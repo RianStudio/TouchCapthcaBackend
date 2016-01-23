@@ -125,36 +125,36 @@
             <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
             <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
             <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="start active ">
-                    <a href="index.html">
+                <li class="start <?php  if($func == "index"){ echo "active"; } ?> ">
+                    <a href="/backend/index">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
                 </li>
 
-                <li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="">
-                    <a href="angularjs" target="_blank">
+                <li class="tooltips <?php  if($func == "key"){ echo "active"; } ?>" data-container="body" data-placement="right" data-html="true" data-original-title="">
+                    <a href="/backend/key" >
                         <i class="fa fa-key"></i>
 					<span class="title">
 					密钥管理 </span>
                     </a>
                 </li>
                 <li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="">
-                    <a href="angularjs" target="_blank">
+                    <a href="angularjs" >
                         <i class="fa fa-picture-o"></i>
 					<span class="title">
 					验证图片 </span>
                     </a>
                 </li>
                 <li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="">
-                    <a href="angularjs" target="_blank">
+                    <a href="angularjs" >
                         <i class="fa fa-signal"></i>
 					<span class="title">
 					数据统计 </span>
                     </a>
                 </li>
                 <li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="">
-                    <a href="angularjs" target="_blank">
+                    <a href="angularjs" ">
                         <i class="fa fa-users"></i>
 					<span class="title">
 					管理员账户 </span>

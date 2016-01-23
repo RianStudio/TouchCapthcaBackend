@@ -30,6 +30,8 @@ Route::post('/login/index',"LoginController@index");
 
 //后台首页
 Route::get('/backend/index',"IndexController@index");
+//密钥管理
+Route::get('/backend/key',"IndexController@key");
 /*
 |--------------------------------------------------------------------------
 | Application Routes

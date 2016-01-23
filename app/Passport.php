@@ -28,7 +28,12 @@ class Passport extends Model
     }
 
 
-
+    /**
+     * 检查是不是已经存在
+     * @param $k
+     * @param $v
+     * @return bool 是都验证完成
+     */
     public static function checkPassport($k,$v){
         $find=Passport::where("key",$k)->where("secret",$v)->get();
         if(count($find) > 0){
@@ -36,5 +41,30 @@ class Passport extends Model
         }
         //没有结果,表示验证失败
         return false;
+    }
+
+
+    /**
+     * 获取验证码
+     * @param $user_id 用户的uid
+     */
+    public static function getPassport($user_id){
+        $find=Passport::where("user_id",$user_id)->get();
+        if(count($find) > 0){
+            return $find[0];
+        }
+        //没有结果,表示验证失败
+        return false;
+    }
+
+
+    /**
+     * 重置密钥
+     * @param $key
+     */
+    public static function reset($key){
+        $k=substr(str_shuffle(md5(microtime())),rand(1,5),18);
+        DB::table('passports')
+            ->where('key', $key) ->update(['secret' =>$k]);
     }
 }
