@@ -90,7 +90,7 @@
 
                             </li>
                             <li>
-                                <a href="login.html">
+                                <a href="/auth/logout">
                                     <i class="icon-key"></i> 登出 </a>
                             </li>
                         </ul>

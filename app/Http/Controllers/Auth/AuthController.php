@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -30,7 +31,10 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/backend/index';
 
-    protected $loginPath = '/login';
+    protected $loginPath = '/auth/login';
+
+    protected $redirectAfterLogout = '/auth/login';
+
 
     /**
      * Create a new authentication controller instance.
@@ -40,6 +44,7 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+
     }
 
     /**
