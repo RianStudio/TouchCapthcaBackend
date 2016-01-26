@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\DB;
 class Passport extends Model
 {
     //
@@ -63,8 +63,11 @@ class Passport extends Model
      * @param $key
      */
     public static function reset($key){
+        $phptime=date("Y-m-d H:i:s.u");
         $k=substr(str_shuffle(md5(microtime())),rand(1,5),18);
         DB::table('passports')
-            ->where('key', $key) ->update(['secret' =>$k]);
+            ->where('key', $key) ->update(['secret' =>$k,'updated_at'=>$phptime ]);
+
+        return 1;
     }
 }

@@ -17,15 +17,10 @@ class IndexController extends Controller
         if(Auth::check() == false){
             return redirect()->intended("/auth/login");
         }
-
     }
 
 
     public function index(Request $request){
-
-        $data = $request->session()->all(); var_dump($data);
-        $user = \Auth::user(); //获取登录用户的信息 TODO 第一次部署系统,需要创建账户,初始化key
-        var_dump($user);
         $func=__FUNCTION__;
         //展示后台首页
         return view('/back/index',[
@@ -54,7 +49,15 @@ class IndexController extends Controller
     /**
      * ajax的方式对密钥进行重置
      */
-    public function ajaxReset(){
+    public function ajaxReset()
+    {
+        $key=$_GET['key'];
+
+        $reset=Passport::reset($key);
+
+
+        return $reset;
+
 
 
 

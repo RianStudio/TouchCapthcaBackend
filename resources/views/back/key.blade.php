@@ -48,6 +48,7 @@
                             </div>
                         </div>
                         <div class="portlet-body">
+                            <input type="hidden" id="key" value="<?= $info->key ?>">
 
                             <div class="alert alert-warning">
                                 <strong>ID :</strong>  <?= $info->key ?>
@@ -149,10 +150,21 @@
         $('#reset').click(function(){
             bootbox.confirm("你确定要重置密钥吗?重置后需要修改网页端配置文件!", function(result) {
                 //alert(result);
-                if(result === true){
-                    alert("ok");
-                    //调用ajax
+                if(result === true) {
 
+                    //调用ajax
+                    $.ajax({
+                        type: "GET",
+                        url: "/backend/key/reset",
+                        data: {key: $("#key").val()},
+                        dataType: "json",
+                        success: function (data) {
+                            //刷新当前页面
+                            history.go(0)
+                        },
+
+
+                    });
                 }
             });
         });

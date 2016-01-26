@@ -56,6 +56,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/backend/index',"IndexController@index");
     //密钥管理
     Route::get('/backend/key',"IndexController@key");
+    //重置密钥
+    Route::get('/backend/key/reset',"IndexController@ajaxReset");
 
     //退出
     Route::get('/login/logout',"LoginController@getLogout");
