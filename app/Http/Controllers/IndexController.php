@@ -52,14 +52,23 @@ class IndexController extends Controller
     public function ajaxReset()
     {
         $key=$_GET['key'];
-
         $reset=Passport::reset($key);
-
-
         return $reset;
+    }
+
+
+    /**
+     * 背景文件管理
+     */
+    public function pic(){
+        $func=__FUNCTION__;
 
 
 
+        return view('/back/pic',[
+            'func'=>$func,
+
+        ]);
 
     }
 }

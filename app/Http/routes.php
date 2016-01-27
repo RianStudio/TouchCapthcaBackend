@@ -59,6 +59,9 @@ Route::group(['middleware' => ['web']], function () {
     //重置密钥
     Route::get('/backend/key/reset',"IndexController@ajaxReset");
 
+    //背景图片管理
+    Route::get('/backend/pic',"IndexController@pic");
+
     //退出
     Route::get('/login/logout',"LoginController@getLogout");
 

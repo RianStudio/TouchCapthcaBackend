@@ -139,8 +139,8 @@
 					密钥管理 </span>
                     </a>
                 </li>
-                <li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="">
-                    <a href="angularjs" >
+                <li class="tooltips <?php  if($func == "pic"){ echo "active"; } ?>" data-container="body" data-placement="right" data-html="true" data-original-title="">
+                    <a href="/backend/pic" >
                         <i class="fa fa-picture-o"></i>
 					<span class="title">
 					验证图片 </span>
